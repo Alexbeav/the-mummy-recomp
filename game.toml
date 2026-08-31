@@ -1,0 +1,53 @@
+# Autofilled by tools/new_project_layout/probe_disc.py from your legal dump.
+# Review before shipping. Runtime quirks / overlay seeds still need hand work.
+
+[game]
+name = "The Mummy"
+id = "SLUS-01187"
+players = 1
+exe = "disc/SLUS_011.87"
+disc = ""
+load_address = "0x80010000"
+entry_pc = "0x80063904"
+text_size = "0x00091000"
+stack_base = "0x801FFFF0"
+
+# Digests are for data Track 01 (first BINARY FILE / TRACK 01).
+[prepare_disc]
+out_dir = "disc"
+bin_name = "disc1.bin"
+cue_name = "disc1.cue"
+boot_exe = "SLUS_011.87"
+known_sizes = [458103744]
+known_md5 = [
+  "4c6f8dbed7233c1d1ed74d92aa67b857",
+]
+known_sha1 = [
+  "ef266fcac356f05950a81aaa350fbf211defcdd8",
+]
+known_crc32 = [
+  "5a6b2b68",
+]
+
+[recompiler]
+seeds = "seeds/ghidra_funcs.txt"
+out_dir = "generated"
+strict = true
+
+[runtime]
+window_title = "the-mummy- Recompiled"
+memcard_dir = "saves"
+
+[video]
+renderer = "opengl"
+aspect_ratio = "4:3"
+
+[controller]
+default_mode = "digital"
+
+# Online mount gate: digests + track count + optional TOC fingerprint
+# (see docs/NETPLAY.md).
+[netplay]
+require_cue = true
+required_tracks = 1
+required_disc_fp = "af91b6ecc887b631cc689258f5cb7ecd1d79bcd3f081863dbb7fdb8eb22ca505"
