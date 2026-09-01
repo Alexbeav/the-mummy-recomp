@@ -16,7 +16,7 @@ static const PsxrecompCodegenHostConfig kCodegenConfig = {
     .gen_marker_relpath = "generated/SLUS_011.87_dispatch.c",
     .build_dir_name = "build-release",
     .cmake_target = "psx-runtime",
-    .exe_basename = "the_mummy__Recompiled",
+    .exe_basename = "The_Mummy_Recompiled",
     .prepare_note =
         "Uses your legal disc with the local psxrecomp SDK to generate "
         "BIOS + game C, then cmake --build. The product lives under "
